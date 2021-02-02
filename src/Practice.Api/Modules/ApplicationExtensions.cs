@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using MediatR;
 using Microsoft.Extensions.Configuration;
+using Practice.Core.Features.Digimons.Queries.GetDigimons;
 
 namespace Practice.Api.Modules
 {
@@ -31,6 +32,7 @@ namespace Practice.Api.Modules
                 return t => c.Resolve(t);
             });
 
+            builder.RegisterType<GetDigimonsQueryHandler>().AsImplementedInterfaces().InstancePerDependency();
             return builder;
         }
     }

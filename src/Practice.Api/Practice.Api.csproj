@@ -26,6 +26,11 @@
         <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321" />
         <AdditionalFiles Include="../stylecop.json" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\Practice.Core\Practice.Core.csproj" />
+      <ProjectReference Include="..\Practice.Infrastructure\Practice.Infrastructure.csproj" />
+    </ItemGroup>
 
     <PropertyGroup>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>

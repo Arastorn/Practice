@@ -1,9 +1,11 @@
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Practice.Api.Modules;
 
 namespace Practice.Api
 {
@@ -24,6 +26,13 @@ namespace Practice.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Practice.Api", Version = "v1" });
             });
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterInstance(Configuration).As<IConfiguration>();
+            builder.RegisterPersistence();
+            builder.RegisterUseCases(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

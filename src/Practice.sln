@@ -7,6 +7,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.Infrastructure", "Practice.Infrastructure\Practice.Infrastructure.csproj", "{3B91CDA9-9729-41D2-9A6B-1F735E5A1C71}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{7080A925-7932-404C-A881-2B6534A32FD6}"
+ProjectSection(SolutionItems) = preProject
+	stylecop.json = stylecop.json
+	.editorconfig = .editorconfig
+	Practice.ruleset = Practice.ruleset
+EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0348DAB8-1796-4966-B29A-FC0358D0A42C}"
 EndProject

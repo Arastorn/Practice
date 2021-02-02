@@ -2,14 +2,29 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <IsPublishable>True</IsPublishable>
+        <IncludeOpenAPIAnalyzers>True</IncludeOpenAPIAnalyzers>
+        <EnableNetAnalyzers>true</EnableNetAnalyzers>
+        <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <CodeAnalysisRuleSet>../Practice.ruleset</CodeAnalysisRuleSet>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     </ItemGroup>
-
+    
     <ItemGroup>
-      <Folder Include="Modules" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321" />
+        <AdditionalFiles Include="../stylecop.json" />
     </ItemGroup>
 
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+    
 </Project>

@@ -26,6 +26,7 @@ namespace Practice.Api.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            logger.LogInformation("Request to get weather forecast started");
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
                 {

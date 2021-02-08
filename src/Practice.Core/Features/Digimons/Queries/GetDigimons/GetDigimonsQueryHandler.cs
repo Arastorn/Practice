@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Practice.Core.Entities.DigimonAggregate;
@@ -16,9 +15,6 @@ namespace Practice.Core.Features.Digimons.Queries.GetDigimons
             this.digimonRepository = digimonRepository;
         }
 
-        public async Task<Digimon[]> Handle(GetDigimonsQuery request, CancellationToken cancellationToken)
-        {
-            return digimonRepository.GetDigimons();
-        }
+        public async Task<Digimon[]> Handle(GetDigimonsQuery request, CancellationToken cancellationToken) => await digimonRepository.GetDigimons();
     }
 }

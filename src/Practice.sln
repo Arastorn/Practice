@@ -11,9 +11,14 @@ ProjectSection(SolutionItems) = preProject
 	stylecop.json = stylecop.json
 	.editorconfig = .editorconfig
 	Practice.ruleset = Practice.ruleset
+	Dockerfile = Dockerfile
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0348DAB8-1796-4966-B29A-FC0358D0A42C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.DbMigration", "Practice.DbMigration\Practice.DbMigration.csproj", "{AB646DC9-A289-4925-B140-DFB0E9066696}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.Core.Tests", "Practice.Core.Tests\Practice.Core.Tests.csproj", "{FD2D53EB-8041-4C8C-BE7B-FEE9007FEA83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,5 +38,16 @@ Global
 		{3B91CDA9-9729-41D2-9A6B-1F735E5A1C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B91CDA9-9729-41D2-9A6B-1F735E5A1C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B91CDA9-9729-41D2-9A6B-1F735E5A1C71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB646DC9-A289-4925-B140-DFB0E9066696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB646DC9-A289-4925-B140-DFB0E9066696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB646DC9-A289-4925-B140-DFB0E9066696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB646DC9-A289-4925-B140-DFB0E9066696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD2D53EB-8041-4C8C-BE7B-FEE9007FEA83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2D53EB-8041-4C8C-BE7B-FEE9007FEA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2D53EB-8041-4C8C-BE7B-FEE9007FEA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2D53EB-8041-4C8C-BE7B-FEE9007FEA83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD2D53EB-8041-4C8C-BE7B-FEE9007FEA83} = {0348DAB8-1796-4966-B29A-FC0358D0A42C}
 	EndGlobalSection
 EndGlobal

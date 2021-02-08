@@ -2,10 +2,27 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <EnableNetAnalyzers>true</EnableNetAnalyzers>
+        <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <CodeAnalysisRuleSet>../Practice.ruleset</CodeAnalysisRuleSet>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="MediatR" Version="9.0.0" />
     </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="NodaTime" Version="3.0.3" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321" />
+        <AdditionalFiles Include="../stylecop.json" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
 
 </Project>

@@ -1,6 +1,10 @@
 ﻿using Autofac;
 using MediatR;
 using Microsoft.Extensions.Configuration;
+using NodaTime;
+using Practice.Core.Features.Digimons.Commands.CreateDigimon;
+using Practice.Core.Features.Digimons.Commands.UpdateDigimon;
+using Practice.Core.Features.Digimons.Queries.GetDigimonById;
 using Practice.Core.Features.Digimons.Queries.GetDigimons;
 
 namespace Practice.Api.Modules
@@ -10,6 +14,10 @@ namespace Practice.Api.Modules
         public static ContainerBuilder RegisterUseCases(this ContainerBuilder builder, IConfiguration configuration)
         {
             builder.RegisterMediators();
+
+            builder.Register(c => SystemClock.Instance).As<IClock>();
+            builder.Register(c => DateTimeZoneProviders.Tzdb).As<IDateTimeZoneProvider>();
+
             return builder;
         }
 
@@ -33,6 +41,10 @@ namespace Practice.Api.Modules
             });
 
             builder.RegisterType<GetDigimonsQueryHandler>().AsImplementedInterfaces().InstancePerDependency();
+            builder.RegisterType<CreateDigimonCommandHandler>().AsImplementedInterfaces().InstancePerDependency();
+            builder.RegisterType<UpdateDigimonCommandHandler>().AsImplementedInterfaces().InstancePerDependency();
+            builder.RegisterType<GetDigimonByIdQueryHandler>().AsImplementedInterfaces().InstancePerDependency();
+
             return builder;
         }
     }

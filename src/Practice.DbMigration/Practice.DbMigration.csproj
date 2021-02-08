@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <CodeAnalysisRuleSet>../Practice.ruleset</CodeAnalysisRuleSet>
+        <EnableNetAnalyzers>true</EnableNetAnalyzers>
+        <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+        <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentMigrator" Version="3.2.10" />
+        <PackageReference Include="FluentMigrator.Runner" Version="3.2.10" />
+        <PackageReference Include="FluentMigrator.Runner.Postgres" Version="3.2.10" />
+        <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1" />
+        <PackageReference Include="Npgsql" Version="4.1.5" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" />
+        <AdditionalFiles Include="../stylecop.json" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="InstallExtension.sql">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+</Project>
